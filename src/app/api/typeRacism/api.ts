@@ -8,21 +8,29 @@ class Api {
   withCredentials: true
   })
   
- async get(){
-  const response = await this.consumo.get('/tipo-racismo')
+ async getTypes (){
+  const response = await this.consumo.get('/tipos-racismo')
   return response.data
   }
 
-  async post (data:TypesRacismProps){
-    const response = await this.consumo.post('/tipo-racismo/criar', data.descricao)
+  async postTypes (data:TypesRacismProps){
+    const response = await this.consumo.post('/tipos-racismo/criar', data.descricao)
     return response.data
   }
 
-  async update(data:TypesRacismProps){
+  async updateTypes (id:string, data:TypesRacismProps){
+    const response = await this.consumo.put(`/tipos-racismo/atualizar/${id}`, {
+      descricao: data.descricao
+  });
 
+  return response.data;
   }
 
-  async delete(){
-
+  async deleteTypes (id: string) {
+    const response = await this.consumo.delete(`/tipos-racismo/deletar/${id}`);
+    return response.data;
   }
 }
+
+const api = new Api();
+export default api;
