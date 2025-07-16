@@ -1,5 +1,6 @@
 "use client";
-import { createContext, useState, useEffect, useContext } from "react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { createContext, useState, useEffect } from "react";
 import api from "@/app/api/typeRacism/api";
 import { TypesRacismProps } from "@/types";
 
@@ -31,7 +32,7 @@ export const TypeRacismProvider = ({ children }: { children: React.ReactNode }) 
     try {
       const data = await api.getTypes(); 
       setTypes(data);
-    } catch (err: any) {
+    } catch (err:any) {
       setError(err.message || 'Erro ao buscar tipos de racismo.');
       console.error("Erro ao buscar tipos de racismo:", err);
     } finally {
