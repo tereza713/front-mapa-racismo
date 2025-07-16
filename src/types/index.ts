@@ -6,7 +6,7 @@ export interface TypesRacismProps{ // tipando
   export interface Usuario {
     id?: string;
     email: string;
-    papel: "USER" | "ADMIN";
+    senha: string;
 };
 
 export interface LoginProps {

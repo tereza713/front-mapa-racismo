@@ -1,12 +1,12 @@
 'use client'
+import FormularioCreate from "./components/forms/formsCreate";
 import Header from "@/components/ui/header";
 import Link from "next/link";
 import Image from 'next/image'
 import { Button } from "@/components/ui/button";
 import Footer from "@/components/footer";
 
-
-export default function LandingPage() {
+export default function Home() {
   return(
     <>
       <Header> {/*cria os elementos para a header desta página*/}
@@ -61,6 +61,11 @@ export default function LandingPage() {
           <li className="transition hover:text-neutral-400 duration-300 ease-in-out">Teste 2</li>
           <li className="transition hover:text-neutral-400 duration-300 ease-in-out">Teste 3</li>
         </ul>
+            <FormularioCreate>
+            </FormularioCreate>
     </Footer>
     </>
-  )};
+
+
+  );
+}

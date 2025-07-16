@@ -1,3 +1,4 @@
+/*
 'use client'
 import { TypesRacismProps } from "@/types";
 import axios from "axios";
@@ -30,7 +31,13 @@ class Api {
     const response = await this.consumo.delete(`/tipos-racismo/deletar/${id}`);
     return response.data;
   }
+ 
 }
 
+<<<<<<< HEAD
 const api = new Api();
 export default api;
+=======
+export default new Api();
+ */
+>>>>>>> KelvisAuth
