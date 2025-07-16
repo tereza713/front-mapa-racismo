@@ -1,3 +1,4 @@
+/*
 'use client'
 import { TypesRacismProps } from "@/types";
 import axios from "axios";
@@ -25,4 +26,8 @@ class Api {
   async delete(){
 
   }
+ 
 }
+
+export default new Api();
+ */
