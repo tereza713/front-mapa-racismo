@@ -93,10 +93,10 @@ Você pode acessar a versão hospedada aqui:
 
 ## 🖼️ Imagens do projeto
 
-> Adicione aqui prints da interface (ex: home, mapa, formulário, etc).
 
 - 📷 Home:
-  `public/image/home.png`
+  <img width="930" height="446" alt="image" src="https://github.com/user-attachments/assets/03d6ca7e-9833-41e6-bbff-d3a5416fbe99" />
+
 
 ---
 
