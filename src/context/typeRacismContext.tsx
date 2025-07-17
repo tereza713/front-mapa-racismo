@@ -1,7 +1,6 @@
 "use client";
-/* eslint-disable @typescript-eslint/no-explicit-any */
-import { createContext, useState, useEffect } from "react";
-import api from "@/app/api/typeRacism/api";
+import { createContext, useState, useEffect, useContext } from "react";
+import api from "@/app/(api)/typeRacism/api";
 import { TypesRacismProps } from "@/types";
 
 interface TypeRacismContextProps {
@@ -11,6 +10,7 @@ interface TypeRacismContextProps {
   createType: (data: { descricao: string }) => Promise<void>;
   updateType: (id: string, data: { descricao: string }) => Promise<void>;
   deleteType: (id: string) => Promise<void>;
+  fetchTypesOfRacism: () => Promise<void>; 
 }
 
 export const TypeRacismContext = createContext<TypeRacismContextProps>({
@@ -20,6 +20,7 @@ export const TypeRacismContext = createContext<TypeRacismContextProps>({
     createType: async () => {},
     updateType: async () => {},
     deleteType: async () => {},
+    fetchTypesOfRacism: async () => {}, 
 });
 
 export const TypeRacismProvider = ({ children }: { children: React.ReactNode }) => {
@@ -67,7 +68,7 @@ export const TypeRacismProvider = ({ children }: { children: React.ReactNode }) 
   const deleteType = async (id: string) => {
     try {
       await api.deleteTypes(id); 
-      setTypes((prev) => prev.filter((tipo) => tipo.id !== id));
+      setTypes((prev) => prev.filter((tipo) => tipo.id!== id));
     } catch (err: any) {
       setError(err.message || "Erro ao deletar tipo de racismo.");
       console.error("Erro ao deletar tipo de racismo:", err);
@@ -80,7 +81,7 @@ export const TypeRacismProvider = ({ children }: { children: React.ReactNode }) 
 
 
   return (
-    <TypeRacismContext.Provider value={{ types, loading, error, createType, updateType, deleteType}}>
+    <TypeRacismContext.Provider value={{ types, loading, error, createType, updateType, deleteType, fetchTypesOfRacism}}>
       {children}
     </TypeRacismContext.Provider>
   );

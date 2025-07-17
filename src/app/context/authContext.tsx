@@ -1,6 +1,6 @@
 "use client";
 
-import authAPI from "@/app/api/typeAuth/api";
+import authAPI from "@/app/(api)/typeAuth/api";
 import { ContextProps, LoginProps, Usuario } from "@/types";
 import React, { createContext, useState, useEffect } from "react";
 interface AuthProviderProps {
