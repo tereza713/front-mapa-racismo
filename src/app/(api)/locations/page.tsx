@@ -1,7 +1,7 @@
 'use client'
-import Header from "@/components/header";
+import Header from "@/components/layout/header";
 import Link from "next/link";
-import Footer from "@/components/footer";
+import Footer from "@/components/layout/footer";
 
 export default function TypeRacismPage() {
   return (
