@@ -1,4 +1,4 @@
-# 🗺️ Mapa do Racismo — Front-end
+# 🗺️ Mapa do Racismo — Front-end 🌈
 
 Este é o repositório do front-end do projeto **Mapa do Racismo**, uma aplicação desenvolvida para **denunciar, visualizar e combater casos de racismo** através de um mapa interativo. Com foco em acessibilidade e impacto social, a aplicação foi construída utilizando **Next.js**, **TailwindCSS**, **TypeScript** e outras tecnologias modernas para garantir performance, escalabilidade e usabilidade.
 
