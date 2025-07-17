@@ -8,9 +8,24 @@ export interface TypesRacismProps{ // tipando
   descricao: string;
   data: string;
   status: string;
-  localizacaoId: string;
-  tipoRacismoId: string;
+  localizacaoId?: string;
+  tipoRacismoId?: string;
 }
+
+export interface LocalProps {
+  id?: string;
+  nome: string;
+  descricao: string;
+  bairro?: string;
+  rua?: string;
+  latitude?: number;
+  longitude?: number;
+  tipoRacismo: TypesRacismProps;
+  _count?: {
+    respostas: number;
+  };
+}
+
   export interface Usuario {
     id?: string;
     email: string;

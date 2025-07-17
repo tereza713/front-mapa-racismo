@@ -1,6 +1,8 @@
+
 import Link from "next/link";
 import React from "react";
 import github from "../../../public/github.svg"
+
 
 interface FooterProps {
   children: React.ReactNode;

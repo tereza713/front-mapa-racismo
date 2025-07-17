@@ -3,6 +3,10 @@ import Header from "@/components/layout/header";
 import Link from "next/link";
 import Footer from "@/components/layout/footer";
 
+import LocalizacaoForm from "./_components/localizacaoForm";
+import LocalizacaoLista from "./_components/localizacaoLista";
+
+
 export default function TypeRacismPage() {
   return (
     <>
@@ -26,6 +30,16 @@ export default function TypeRacismPage() {
       <h1 className="text-3xl font-bold">Tipos de Racismo</h1>
       <p className="mt-4">Conteúdo da página aqui.</p>
     </div>
+
+    <section>
+      <LocalizacaoLista/>
+    </section>
+    
+    <section>
+      <h1 className="text-2xl font-bold mb-6">Criar Nova Localização</h1>
+      <LocalizacaoForm />
+    </section>
+
 
     <Footer>
       <p>&copy; Mapa do Racismo. Todos os direitos reservados.</p>
