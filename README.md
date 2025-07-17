@@ -35,6 +35,8 @@ A aplicação permite:
 - A API deve estar rodando localmente (ou fornecida em um endereço remoto)
 
 ---
+Veja online em: https://front-mapa-racismo-qnzk.vercel.app/
+---
 
 ### 👣 Passo a passo
 
