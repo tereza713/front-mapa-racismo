@@ -1,6 +1,6 @@
 "use client";
-import { createContext, useState, useEffect, useContext } from "react";
-import api from "@/app/(api)/typeRacism/api";
+import { createContext, useState, useEffect } from "react";
+import api from "@/app/(api)/typeRacism/apiTypes";
 import { TypesRacismProps } from "@/types";
 
 interface TypeRacismContextProps {

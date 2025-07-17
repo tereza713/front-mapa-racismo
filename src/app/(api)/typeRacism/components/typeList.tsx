@@ -2,7 +2,7 @@
 
 import React, { useContext, useState } from 'react';
 import { TypeRacismContext } from '@/context/typeRacismContext';
-import api from '../api';
+import api from '../apiTypes';
 import { TypesRacismProps } from '@/types';
 
 const TypeRacismList = () => {

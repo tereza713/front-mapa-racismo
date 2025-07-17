@@ -3,6 +3,14 @@ export interface TypesRacismProps{ // tipando
     descricao: string;
     }
 
+  export interface OccurrencesProps {
+  id?: string;
+  descricao: string;
+  data: string;
+  status: string;
+  localizacaoId: string;
+  tipoRacismoId: string;
+}
   export interface Usuario {
     id?: string;
     email: string;
@@ -21,5 +29,5 @@ export interface ContextProps {
   logout: () => void;
 };
 
-
+//roger está aqui
   

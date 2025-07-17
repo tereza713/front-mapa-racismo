@@ -1,6 +1,6 @@
 'use client'
 import FormularioCreate from "./components/forms/formsCreate";
-import Header from "@/components/ui/header";
+import Header from "@/components/header";
 import Link from "next/link";
 import Image from 'next/image'
 import { Button } from "@/components/ui/button";

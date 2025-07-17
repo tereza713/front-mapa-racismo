@@ -1,17 +1,10 @@
-"use client";
-
-import React from "react";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-import Link from "next/link";
-
-export default function NotFount(){
-    return(
-        <main className="w-full h-[100svh] flex flex-col items-center justify-center bg-white">
-            <DotLottieReact src="/lottie/notFound.lottie" loop autoplay />
-            <Link href="/" className="text-red-400 bg-blue-500">Home</Link >
-        </main>
-
-    );
-
-
+export default function NotFound() {
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-white text-center p-6">
+      <div>
+        <h1 className="text-4xl font-bold text-red-600 mb-4">404</h1>
+        <p className="text-xl text-gray-700 mb-6">Página não encontrada</p>
+      </div>
+    </div>
+  );
 }
