@@ -14,10 +14,13 @@ class ApiOccurrences {
   }
 
 async postOccurrences(data: Omit<OccurrencesProps, 'id'>): Promise<OccurrencesProps> {
-  const response = await this.consumo.post("/occurrences", 
-    {
-      descricao: data.descricao
-    });
+  const response = await this.consumo.post("/ocorrencias/criar", {
+    descricao: data.descricao,
+    localizacaoId: data.localizacaoId,
+    tipoRacismoId: data.tipoRacismoId,
+    status: data.status,
+    data: data.data, // se o backend aceitar, senão remova
+  });
   return response.data;
 }
 

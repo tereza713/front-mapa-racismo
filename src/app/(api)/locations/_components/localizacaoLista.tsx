@@ -18,12 +18,12 @@ export default function LocalizacaoLista() {
       <h2 className="text-xl font-bold mb-4">Localizações Registradas</h2>
       <ul className="space-y-2">
         {locais.map((local) => (
-          <li key={local.id} className="p-4 border rounded-lg shadow-md">
+          <li key={local.id} className="p-4 border rounded-lg shadow-md bg-amber-300">
             <p className="font-semibold">{local.nome}</p>
-            <p className="text-sm text-gray-600">{local.descricao}</p>
+            <p className="text-sm text-zinc-800">{local.descricao}</p>
             <p className="text-xs">Bairro: {local.bairro || "N/A"}</p>
             <p className="text-xs">Tipo de Racismo: {local.tipoRacismo?.descricao}</p>
-            <p className="text-xs text-gray-500">
+            <p className="text-xs text-zinc-800">
               Respostas: {local._count?.respostas || 0}
             </p>
           </li>

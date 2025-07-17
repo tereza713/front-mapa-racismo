@@ -4,7 +4,6 @@ import Footer from "@/components/layout/footer";
 import Main from "@/components/layout/main";
 import SectionLinCol from "@/components/layout/section-Lin-Col";
 import SectionCol from "@/components/layout/section-Col";
-import Link from "next/link";
 import Image from 'next/image'
 
 
@@ -39,7 +38,6 @@ export default function Home() {
             e combater essa violência. Esta página foi criada para registrar
             e mapear denúncias de racismo, dando visibilidade às vítimas e
             fortalecendo a luta por justiça e igualdade.</p>
-          <Button>Navegue</Button>
         </SectionCol>
       </Main>
 

@@ -14,7 +14,7 @@ export default function Footer({ children }: FooterProps) {
         <p>&copy; Mapa do Racismo. Todos os direitos reservados.</p>
       </div>
 
-      <nav className="w-full px-6 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <nav className="w-full px-6 py-4 flex flex-col md:flex-row items-center justify-center gap-4">
         {/* Menu de navegação */}
         <ul className="flex flex-col md:flex-row items-center gap-4">
           <li>
@@ -33,12 +33,12 @@ export default function Footer({ children }: FooterProps) {
             </Link>
           </li>
           <li>
-            <Link href="/denounce" className="transition-colors hover:text-amber-400 px-3 py-2 rounded-lg font-medium">
+            <Link href="/ocorrences" className="transition-colors hover:text-amber-400 px-3 py-2 rounded-lg font-medium">
               Ocorrência
             </Link>
           </li>
           <li>
-            <Link href="/login" className="bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold px-4 py-2 rounded-lg transition-colors">
+            <Link href="/Auth" className="bg-amber-500 hover:bg-amber-600 text-gray-900 font-bold px-4 py-2 rounded-lg transition-colors">
               Cadastre-se
             </Link>
           </li>

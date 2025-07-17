@@ -36,7 +36,7 @@ export const TypeRacismProvider = ({ children }: { children: React.ReactNode }) 
     try {
       const data = await api.getTypes(); 
       setTypes(data);
-    } catch (err:any) {
+    } catch (err:unknown) {
       setError(err.message || 'Erro ao buscar tipos de racismo.');
       console.error("Erro ao buscar tipos de racismo:", err);
     } finally {
@@ -49,7 +49,7 @@ export const TypeRacismProvider = ({ children }: { children: React.ReactNode }) 
       const response = await api.postTypes(data); 
       setTypes((prev) => [...prev, response]);
       return response;
-    } catch (err: any) {
+    } catch (err: unknown) {
       setError(err.message || "Erro ao criar tipo de racismo.");
       console.error("Erro ao criar tipo de racismo:", err);
       throw err;
@@ -62,7 +62,7 @@ export const TypeRacismProvider = ({ children }: { children: React.ReactNode }) 
       setTypes((prev) =>
         prev.map((tipo) => (tipo.id === id ? response : tipo))
       );
-    } catch (err: any) {
+    } catch (err: unknown) {
       setError(err.message || "Erro ao atualizar tipo de racismo.");
       console.error("Erro ao atualizar tipo de racismo:", err);
       throw err;
@@ -73,7 +73,7 @@ export const TypeRacismProvider = ({ children }: { children: React.ReactNode }) 
     try {
       await api.deleteTypes(id); 
       setTypes((prev) => prev.filter((tipo) => tipo.id!== id));
-    } catch (err: any) {
+    } catch (err: unknown) {
       setError(err.message || "Erro ao deletar tipo de racismo.");
       console.error("Erro ao deletar tipo de racismo:", err);
       throw err;

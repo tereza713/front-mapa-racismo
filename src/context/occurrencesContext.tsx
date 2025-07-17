@@ -33,7 +33,7 @@ export const OccurrencesProvider = ({ children }: { children: React.ReactNode })
     try {
       const data = await api.getOccurrences();
       setOccurrences(data);
-    } catch (err:any) {
+    } catch (err:unknown) {
       setError(err.message || 'Erro ao buscar ocorrências.');
       console.error("Erro ao buscar ocorrências:", err);
     } finally {
@@ -44,7 +44,7 @@ export const OccurrencesProvider = ({ children }: { children: React.ReactNode })
   const createOccurrence = async (data: Omit<OccurrencesProps, 'id' | 'data' | 'status'> & { data: string, status: string }) => { // Renomeado e tipo de 'data' adaptado
     try {
       const response = await api.postOccurrences(data);
-    } catch (err: any) {
+    } catch (err: unknown) {
       setError(err.message || "Erro ao criar ocorrência.");
       console.error("Erro ao criar ocorrência:", err);
       throw err;
@@ -57,7 +57,7 @@ export const OccurrencesProvider = ({ children }: { children: React.ReactNode })
       setOccurrences((prev) =>
         prev.map((occurrence) => (occurrence.id === id ? response : occurrence))
       );
-    } catch (err: any) {
+    } catch (err: unknown) {
       setError(err.message || "Erro ao atualizar ocorrência.");
       console.error("Erro ao atualizar ocorrência:", err);
       throw err;
@@ -68,7 +68,7 @@ export const OccurrencesProvider = ({ children }: { children: React.ReactNode })
     try {
       await api.deleteOccurrences(id);
       setOccurrences((prev) => prev.filter((occurrence) => occurrence.id!== id));
-    } catch (err: any) {
+    } catch (err: unknown) {
       setError(err.message || "Erro ao deletar ocorrência.");
       console.error("Erro ao deletar ocorrência:", err);
       throw err;
