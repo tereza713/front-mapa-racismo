@@ -12,15 +12,15 @@ export interface TypesRacismProps{ // tipando
   tipoRacismoId?: string;
 }
 
-export interface LocalProps {
-  id?: string;
-  nome: string;
+export interface LocationProps { // <--- DEFINIDA AQUI
+  id: string;
+  nome: string; // Ou 'descricao', 'endereco', o que você usar
   descricao: string;
   bairro?: string;
   rua?: string;
   latitude?: number;
   longitude?: number;
-  tipoRacismo: TypesRacismProps;
+  tipoRacismo: TypesRacismProps; // Uau, isso é um objeto complexo!
   _count?: {
     respostas: number;
   };
@@ -31,6 +31,14 @@ export interface LocalProps {
     email: string;
     senha: string;
 };
+
+export interface TypeFormData {
+  descricao: string;
+  localizacaoId: number;
+  tipoRacismoId: number;
+  status: string;
+}
+
 
 export interface LoginProps {
     email: string; 
@@ -43,6 +51,4 @@ export interface ContextProps {
   login: ({ email, senha }: LoginProps) => Promise<void>;
   logout: () => void;
 };
-
-//roger está aqui
   

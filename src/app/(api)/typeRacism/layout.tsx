@@ -13,6 +13,7 @@ export default function TypeRacismLayout({
         <main className="">
           {children} 
         </main>
+        
       </TypeRacismProvider>
     </div>
   );

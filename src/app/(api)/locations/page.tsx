@@ -16,13 +16,10 @@ export default function TypeRacismPage() {
             <Link href="/" className="transition hover:text-neutral-400 duration-300 ease-in-out">Início</Link>
           </li>
           <li>
-            <Link href="/api/typeRacism" className="transition hover:text-neutral-400 duration-300 ease-in-out">Tipos de Racismo</Link>
+            <Link href="/typeRacism" className="transition hover:text-neutral-400 duration-300 ease-in-out">Tipos de Racismo</Link>
           </li>
           <li>
-            <a href="#denutions" className="transition hover:text-neutral-400 duration-300 ease-in-out">Denúncias</a>
-          </li>
-          <li>
-            <a href="#login" className="text-neutral-900 transition hover:text-zinc-500 duration-300 ease-in-out bg-amber-200">Login</a>
+            <Link href="/locations" className="transition hover:text-neutral-400 duration-300 ease-in-out">Localizações</Link>
           </li>
           </ul>
     </Header>

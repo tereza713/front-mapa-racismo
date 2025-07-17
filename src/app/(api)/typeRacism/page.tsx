@@ -2,8 +2,6 @@
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
 import TypeRacismList from "./components/typeList";
-import { useContext } from "react";
-import { TypeRacismContext } from "@/context/typeRacismContext";
 import Link from "next/link";
 import TypeRacismForm from "./components/typePostForm";
 

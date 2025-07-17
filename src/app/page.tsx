@@ -6,7 +6,7 @@ import SectionLinCol from "@/components/layout/section-Lin-Col";
 import SectionCol from "@/components/layout/section-Col";
 import Link from "next/link";
 import Image from 'next/image'
-import { Button } from "@/components/ui/button";
+
 
 
 
@@ -46,6 +46,7 @@ export default function Home() {
 
       <Footer>
       </Footer>
+
     </>
 
 

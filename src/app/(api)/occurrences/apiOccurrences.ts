@@ -2,7 +2,7 @@
 import { OccurrencesProps } from "@/types";
 import axios from "axios";
 
-class Api {
+class ApiOccurrences {
   consumo = axios.create({
   baseURL:process.env.NEXT_PUBLIC_API_URL,
   withCredentials: true
@@ -13,10 +13,13 @@ class Api {
   return response.data
   }
 
-  async postOccurrences (data:OccurrencesProps){
-    const response = await this.consumo.post('/ocorrencias/criar', data.descricao)
-    return response.data
-  }
+async postOccurrences(data: Omit<OccurrencesProps, 'id'>): Promise<OccurrencesProps> {
+  const response = await this.consumo.post("/occurrences", 
+    {
+      descricao: data.descricao
+    });
+  return response.data;
+}
 
   async updateOccurrences (id:string, data:OccurrencesProps){
     const response = await this.consumo.put(`/ocorrencias/atualizar/${id}`, {
@@ -32,5 +35,5 @@ class Api {
   }
 }
 
-const api = new Api();
-export default api;
+const apiOccurrences = new ApiOccurrences();
+export default apiOccurrences;

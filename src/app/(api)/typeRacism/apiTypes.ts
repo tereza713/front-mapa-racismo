@@ -14,7 +14,10 @@ class Api {
   }
 
   async postTypes (data:TypesRacismProps){
-    const response = await this.consumo.post('/tipos-racismo/criar', data.descricao)
+    const response = await this.consumo.post('/tipos-racismo/criar',
+      {
+      descricao: data.descricao
+    })
     return response.data
   }
 
@@ -32,5 +35,5 @@ class Api {
   }
 }
 
-const api = new Api();
-export default api;
+const apiTypes = new Api();
+export default apiTypes;

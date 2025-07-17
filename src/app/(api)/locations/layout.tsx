@@ -1,7 +1,6 @@
 "use client";
-import { OccurrencesProvider } from "@/context/occurrencesContext";
 import { TypeRacismProvider } from '@/context/typeRacismContext';
-import OccurrencePostForm from "./components/OccurrencePostForm";
+import LocalizacaoForm from "./_components/localizacaoForm";
 
 export default function OccurrencesLayout({
   children,
@@ -9,13 +8,10 @@ export default function OccurrencesLayout({
   children: React.ReactNode;
 }) {
   return (
-<OccurrencesProvider>
   <TypeRacismProvider>
       <main className="">
         {children}
-        <OccurrencePostForm />
       </main>
   </TypeRacismProvider>
-</OccurrencesProvider>
   );
 }

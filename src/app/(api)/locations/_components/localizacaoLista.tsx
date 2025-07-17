@@ -1,13 +1,13 @@
 "use client";
 import { useEffect, useState } from "react";
-import { getAllLocalizacoes } from "../api"; 
-import { LocalProps } from "@/types";
+import apiLocal from "../apiLocation"; 
+import { LocationProps } from "@/types";
 export default function LocalizacaoLista() {
-  const [locais, setLocais] = useState<LocalProps[]>([]);
+  const [locais, setLocais] = useState<LocationProps[]>([]);
 
   useEffect(() => {
     async function fetchData() {
-      const dados = await getAllLocalizacoes();
+      const dados = await apiLocal.getAllLocalizacoes();
       setLocais(dados);
     }
     fetchData();
