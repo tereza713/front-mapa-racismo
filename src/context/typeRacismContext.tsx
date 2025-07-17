@@ -7,7 +7,7 @@ interface TypeRacismContextProps {
   types: TypesRacismProps[];
   loading: boolean;
   error: string | null;
-  createType: (data: { descricao: string }) => Promise<void>;
+  createType: (data: { descricao: string }) => Promise<TypesRacismProps>;
   updateType: (id: string, data: { descricao: string }) => Promise<void>;
   deleteType: (id: string) => Promise<void>;
   fetchTypesOfRacism: () => Promise<void>; 
@@ -17,7 +17,10 @@ export const TypeRacismContext = createContext<TypeRacismContextProps>({
     types: [],
     loading: false,
     error: null,
-    createType: async () => {},
+    createType: async (data) => {
+    console.warn("createType foi chamado do valor padrão do contexto. Garanta que TypeRacismProvider está envolvendo seu componente.");
+    return { id: "dummy-id-default-context", descricao: data.descricao }; 
+  },
     updateType: async () => {},
     deleteType: async () => {},
     fetchTypesOfRacism: async () => {}, 
@@ -45,6 +48,7 @@ export const TypeRacismProvider = ({ children }: { children: React.ReactNode }) 
     try {
       const response = await api.postTypes(data); 
       setTypes((prev) => [...prev, response]);
+      return response;
     } catch (err: any) {
       setError(err.message || "Erro ao criar tipo de racismo.");
       console.error("Erro ao criar tipo de racismo:", err);
@@ -81,7 +85,7 @@ export const TypeRacismProvider = ({ children }: { children: React.ReactNode }) 
 
 
   return (
-    <TypeRacismContext.Provider value={{ types, loading, error, createType, updateType, deleteType, fetchTypesOfRacism}}>
+    <TypeRacismContext.Provider value={{ types, loading, error, createType, updateType, deleteType, fetchTypesOfRacism }}>
       {children}
     </TypeRacismContext.Provider>
   );

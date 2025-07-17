@@ -2,13 +2,26 @@
 import Header from "@/components/layout/header";
 import Link from "next/link";
 import Image from 'next/image'
-import { Button } from "@/components/ui/button";
 import Footer from "@/components/layout/footer";
 
 export default function Home() {
   return(
     <>
-      <Header> {/*cria os elementos para a header desta página*/}
+      <Header>
+        <ul className="flex flex-col items-center gap-2 text-lg text-neutral-100 sm:text-sm sm:p-4 sm:flex-row">
+          <li>
+            <Link href="/typeRacism" className="transition hover:text-neutral-400 duration-300 ease-in-out">Tipos de Racismo</Link>
+          </li>
+          <li>
+            <Link href="/locations" className="transition hover:text-neutral-400 duration-300 ease-in-out">Localizações</Link>
+          </li>
+          <li>
+            <Link href="/occurrences" className="transition hover:text-neutral-400 duration-300 ease-in-out">Ocorrências</Link>
+          </li>
+          <li>
+            <a href="#login" className="text-neutral-900 transition hover:text-zinc-500 duration-300 ease-in-out bg-amber-200">Login</a>
+          </li>
+          </ul>
       </Header>
     <main className="bg-amber-50 flex flex-col items-center gap-2 text-lg text-neutral-100 sm:text-sm">
 
@@ -34,7 +47,6 @@ export default function Home() {
           e combater essa violência. Esta página foi criada para registrar
           e mapear denúncias de racismo, dando visibilidade às vítimas e
           fortalecendo a luta por justiça e igualdade.</p>
-        <Button>Navegue</Button>
       </section>
     </main>
 
