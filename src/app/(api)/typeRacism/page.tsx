@@ -11,7 +11,7 @@ import TypeRacismForm from "./components/typePostForm";
 export default function TypeRacismPage() {
   return (
     <>
-<Header>
+    <Header>
     <ul className="flex flex-col items-center gap-2 text-lg text-neutral-100 sm:text-sm sm:p-4 sm:flex-row">
       <li>
         <Link href="/" className="transition hover:text-neutral-400 duration-300 ease-in-out">Início</Link>
