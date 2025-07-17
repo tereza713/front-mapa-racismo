@@ -1,10 +1,9 @@
 'use client'
-import FormularioCreate from "./components/forms/formsCreate";
-import Header from "@/components/header";
+import Header from "@/components/layout/header";
 import Link from "next/link";
 import Image from 'next/image'
 import { Button } from "@/components/ui/button";
-import Footer from "@/components/footer";
+import Footer from "@/components/layout/footer";
 
 export default function Home() {
   return(
@@ -61,8 +60,6 @@ export default function Home() {
           <li className="transition hover:text-neutral-400 duration-300 ease-in-out">Teste 2</li>
           <li className="transition hover:text-neutral-400 duration-300 ease-in-out">Teste 3</li>
         </ul>
-            <FormularioCreate>
-            </FormularioCreate>
     </Footer>
     </>
 
