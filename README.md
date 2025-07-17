@@ -1,60 +1,103 @@
-# 🗺️ Mapa do Racismo — Front-end
 
-Este é o repositório do front-end do projeto **Mapa do Racismo**, uma aplicação desenvolvida para **denunciar, visualizar e combater casos de racismo** através de um mapa interativo. Com foco em acessibilidade e impacto social, a aplicação foi construída utilizando **Next.js**, **TailwindCSS**, **TypeScript** e outras tecnologias modernas para garantir performance, escalabilidade e usabilidade.
+# 🗺️ Mapa do Racismo — API + Front-end
 
-## 📌 Contextualização
+Este é um projeto completo com **API e Front-end** desenvolvido para registrar e exibir denúncias de racismo por meio de um mapa interativo. A proposta é oferecer uma plataforma acessível, informativa e de impacto social.
 
-O projeto nasce da necessidade urgente de se ter um espaço seguro e acessível onde denúncias de racismo possam ser registradas e visualizadas por qualquer pessoa. Ao usar um mapa como elemento central, conseguimos **georreferenciar os casos** e promover **ações informadas**, seja por órgãos públicos, ONGs ou pela sociedade civil.
+---
+
+## ✊🏾 Sobre o Projeto
 
 A aplicação permite:
-- Cadastro e listagem de denúncias;
-- Visualização no mapa com filtros por local e tipo;
-- Interface limpa e intuitiva para incentivar o uso.
+- Cadastro de denúncias de racismo;
+- Visualização das denúncias em um mapa;
+- Interface moderna e acessível.
 
 ---
 
 ## ⚙️ Tecnologias Utilizadas
 
-| Tecnologia         | Versão utilizada     |
-|--------------------|----------------------|
-| [Next.js](https://nextjs.org/)          | `14.x`                |
-| [TypeScript](https://www.typescriptlang.org/)     | `5.x`                 |
-| [TailwindCSS](https://tailwindcss.com/)          | `3.x`                 |
-| [Lucide React](https://lucide.dev/)              | `0.319.x`             |
-| [ShadCN/UI](https://ui.shadcn.dev/)              | (última versão)       |
-| [React](https://react.dev/)                     | `18.x`                |
+### Backend (API)
+- Node.js 18+
+- Express
+- Sequelize
+- PostgreSQL
+- Neon (opcional)
+
+### Frontend
+- Next.js 14
+- React 18
+- TypeScript 5
+- TailwindCSS
+- ShadCN UI
+- Lucide React
 
 ---
 
-## 🚀 Como rodar o projeto localmente
+## ▶️ Como rodar o projeto
 
-### ✅ Pré-requisitos
-
-- [Node.js](https://nodejs.org/en/) versão 18 ou superior
-- [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
-- A API deve estar rodando localmente (ou fornecida em um endereço remoto)
-
----
-
-### 👣 Passo a passo
+### 🔧 API
 
 ```bash
-# 1. Clone o repositório
-git clone https://github.com/seu-usuario/front-mapa-racismo.git
-cd front-mapa-racismo
+# Clone o repositório da API
+git clone <link-da-api>
+cd api-mapa-racismo
 
-# 2. Instale as dependências
+# Instale as dependências
 npm install
 
-# ou, se preferir yarn:
-# yarn
+# Configure as variáveis de ambiente
+cp .env.example .env
 
-# 3. Configure as variáveis de ambiente
-# Crie um arquivo .env.local e adicione a URL da sua API:
+# Execute as migrations
+npx sequelize db:migrate
+
+# Inicie o servidor
+npm run dev
+```
+
+A API ficará disponível em: `http://localhost:3333`
+
+---
+
+### 💻 Front-end
+
+```bash
+# Clone o repositório do front
+git clone <link-do-front>
+cd front-mapa-racismo
+
+# Instale as dependências
+npm install
+
+# Crie o arquivo de variáveis de ambiente
+cp .env.local.example .env.local
+
+# Adicione a URL da API
 NEXT_PUBLIC_API_URL=http://localhost:3333
 
-# 4. Inicie o servidor de desenvolvimento
+# Inicie o servidor
 npm run dev
+```
 
-# ou
-# yarn dev
+O front ficará disponível em: `http://localhost:3000`
+
+---
+
+## 🌐 Projeto online
+
+Você pode acessar a versão hospedada aqui:
+
+👉 https://front-mapa-racismo-qnzk.vercel.app
+
+---
+
+## 🖼️ Imagens do projeto
+
+
+- 📷 Home:
+  <img width="930" height="446" alt="image" src="https://github.com/user-attachments/assets/03d6ca7e-9833-41e6-bbff-d3a5416fbe99" />
+
+
+---
+
+## 👩🏾‍💻 Feito com propósito social
