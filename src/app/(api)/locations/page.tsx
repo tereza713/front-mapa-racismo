@@ -2,8 +2,10 @@
 import Header from "@/components/layout/header";
 import Link from "next/link";
 import Footer from "@/components/layout/footer";
+
 import LocalizacaoForm from "./_components/localizacaoForm";
 import LocalizacaoLista from "./_components/localizacaoLista";
+
 
 export default function TypeRacismPage() {
   return (

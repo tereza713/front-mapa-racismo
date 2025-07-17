@@ -9,22 +9,7 @@ export default function Home() {
   return(
     <>
       <Header> {/*cria os elementos para a header desta página*/}
-        <ul className="flex flex-col items-center gap-2 text-lg text-neutral-100 sm:text-sm sm:p-4 sm:flex-row">
-          <li>
-            <Link href="/typeRacism" className="transition hover:text-neutral-400 duration-300 ease-in-out">Tipos de Racismo</Link>
-          </li>
-          <li>
-            <Link href="/locations" className="transition hover:text-neutral-400 duration-300 ease-in-out">Localizações</Link>
-          </li>
-          <li>
-            <Link href="/denounce" className="transition hover:text-neutral-400 duration-300 ease-in-out">Denúncias</Link>
-          </li>
-          <li>
-            <a href="#login" className="text-neutral-900 transition hover:text-zinc-500 duration-300 ease-in-out bg-amber-200">Login</a>
-          </li>
-          </ul>
       </Header>
-
     <main className="bg-amber-50 flex flex-col items-center gap-2 text-lg text-neutral-100 sm:text-sm">
 
       <section className="flex flex-row items-center justify-center gap-16 p-8 flex-wrap text-neutral-100 m-4">
@@ -53,13 +38,9 @@ export default function Home() {
       </section>
     </main>
 
-    <Footer>
-      <p>&copy; Mapa do Racismo. Todos os direitos reservados.</p>
-        <ul className="flex gap-4">
-          <li className="transition hover:text-neutral-400 duration-300 ease-in-out">Teste 1</li>
-          <li className="transition hover:text-neutral-400 duration-300 ease-in-out">Teste 2</li>
-          <li className="transition hover:text-neutral-400 duration-300 ease-in-out">Teste 3</li>
-        </ul>
+
+    <Footer> {}
+
     </Footer>
     </>
 
