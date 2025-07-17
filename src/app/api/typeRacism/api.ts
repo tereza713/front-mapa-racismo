@@ -34,10 +34,5 @@ class Api {
  
 }
 
-<<<<<<< HEAD
-const api = new Api();
-export default api;
-=======
 export default new Api();
  */
->>>>>>> KelvisAuth
