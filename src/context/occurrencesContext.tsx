@@ -46,7 +46,7 @@ export const OccurrencesProvider = ({ children }: { children: React.ReactNode })
 
   const createOccurrence = async (data: Omit<OccurrencesProps, 'id' | 'data' | 'status'> & { data: string, status: string }) => { // Renomeado e tipo de 'data' adaptado
     try {
-      const response = await api.postOccurrences(data);
+      const response = await apiOccurrences.postOccurrences(data);
     } catch (err: unknown) {
       if (err instanceof Error) {
         setError(err.message || "Erro ao criar ocorrência.");

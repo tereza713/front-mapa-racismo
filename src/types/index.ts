@@ -12,15 +12,17 @@ export interface TypesRacismProps{ // tipando
   tipoRacismoId?: string;
 }
 
-export interface LocationProps { // <--- DEFINIDA AQUI
+export interface LocationProps {
   id: string;
-  nome: string; // Ou 'descricao', 'endereco', o que você usar
+  nome: string;
   descricao: string;
   bairro?: string;
   rua?: string;
-  tipoRacismo: TypesRacismProps; 
-  _count?: {
-    respostas: number;
+  tipoRacismoId: string;
+  latitude?: number;
+  longitude?: number;
+    _count?: {
+    respostas?: number;
   };
 }
 

@@ -22,7 +22,7 @@ export default function LocalizacaoLista() {
             <p className="font-semibold">{local.nome}</p>
             <p className="text-sm text-zinc-800">{local.descricao}</p>
             <p className="text-xs">Bairro: {local.bairro || "N/A"}</p>
-            <p className="text-xs">Tipo de Racismo: {local.tipoRacismo?.descricao}</p>
+            <p className="text-xs">Tipo de Racismo: {local.tipoRacismoId || "N/A"}</p>
             <p className="text-xs text-zinc-800">
               Respostas: {local._count?.respostas || 0}
             </p>

@@ -27,7 +27,7 @@ class Api {
     rua: data.rua,
     latitude: data.latitude,
     longitude: data.longitude,
-    tipoRacismo: data.tipoRacismo,}
+    tipoRacismoId: data.tipoRacismoId,}
     const res = await this.consumo.post(`/localizacoes/criar`, payload);
     return res.data;
   };
