@@ -52,7 +52,6 @@ export default function FormularioCreate() {
             throw new Error(error?.error ||"Erro ao criar post");
         }
         const { resposta: respostaAPI } = await resposta.json();
-        //const novoUsuario = respostaAPI.resposta
 
         console.log(`DEBUG: usuario criado`);
         reset();//limpa form

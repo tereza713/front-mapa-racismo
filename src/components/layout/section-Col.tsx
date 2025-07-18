@@ -6,7 +6,7 @@ interface ChildrenProps{
 
 export default function SectionCol({children}: ChildrenProps) {
   return (
-    <section className="bg-orange-950 flex flex-col items-center text-center justify-center gap-6 p-18 text-neutral-100 w-full">
+    <section className="bg-orange-950 flex flex-col items-center text-center justify-center gap-6 p-18 text-neutral-100 w-full rounded-2xl">
         {children}
       
     </section>
