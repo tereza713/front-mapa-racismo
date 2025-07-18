@@ -36,10 +36,16 @@ export const TypeRacismProvider = ({ children }: { children: React.ReactNode }) 
     try {
       const data = await api.getTypes(); 
       setTypes(data);
-    } catch (err:unknown) {
-      setError(err.message || 'Erro ao buscar tipos de racismo.');
-      console.error("Erro ao buscar tipos de racismo:", err);
-    } finally {
+    } catch (err: unknown) {
+      if (err instanceof Error) {
+        setError(err.message || 'Erro ao buscar tipos de racismo.');
+        console.error("Erro ao buscar tipos de racismo:", err);
+      } else {
+        setError('Erro ao buscar tipos de racismo.');
+        console.error("Erro ao buscar tipos de racismo:", err);
+      }
+    }
+    finally {
       setLoading(false);
     }
   }
@@ -50,8 +56,13 @@ export const TypeRacismProvider = ({ children }: { children: React.ReactNode }) 
       setTypes((prev) => [...prev, response]);
       return response;
     } catch (err: unknown) {
-      setError(err.message || "Erro ao criar tipo de racismo.");
-      console.error("Erro ao criar tipo de racismo:", err);
+      if (err instanceof Error) {
+        setError(err.message || "Erro ao criar tipo de racismo.");
+        console.error("Erro ao criar tipo de racismo:", err);
+      } else {
+        setError("Erro ao criar tipo de racismo.");
+        console.error("Erro ao criar tipo de racismo:", err);
+      }
       throw err;
     }
   };
@@ -63,8 +74,13 @@ export const TypeRacismProvider = ({ children }: { children: React.ReactNode }) 
         prev.map((tipo) => (tipo.id === id ? response : tipo))
       );
     } catch (err: unknown) {
-      setError(err.message || "Erro ao atualizar tipo de racismo.");
-      console.error("Erro ao atualizar tipo de racismo:", err);
+      if (err instanceof Error) {
+        setError(err.message || "Erro ao atualizar tipo de racismo.");
+        console.error("Erro ao atualizar tipo de racismo:", err);
+      } else {
+        setError("Erro ao atualizar tipo de racismo.");
+        console.error("Erro ao atualizar tipo de racismo:", err);
+      }
       throw err;
     }
   };
@@ -74,8 +90,13 @@ export const TypeRacismProvider = ({ children }: { children: React.ReactNode }) 
       await api.deleteTypes(id); 
       setTypes((prev) => prev.filter((tipo) => tipo.id!== id));
     } catch (err: unknown) {
-      setError(err.message || "Erro ao deletar tipo de racismo.");
-      console.error("Erro ao deletar tipo de racismo:", err);
+      if (err instanceof Error) {
+        setError(err.message || "Erro ao deletar tipo de racismo.");
+        console.error("Erro ao deletar tipo de racismo:", err);
+      } else {
+        setError("Erro ao deletar tipo de racismo.");
+        console.error("Erro ao deletar tipo de racismo:", err);
+      }
       throw err;
     }
   }; 

@@ -62,9 +62,11 @@ export default function OccurrencePostForm() {
         const data = await apiLocal.getAllLocalizacoes();
         setLocations(data);
       } catch (err: unknown) {
-        toast.error(err.message || "Erro ao carregar localizações.");
-      } finally {
-        setLoadingLocations(false);
+        if (err instanceof Error) {
+          toast.error(err.message || "Erro ao carregar localizações.");
+        } else {
+          toast.error("Erro ao carregar localizações.");
+        }
       }
     };
     fetchLocations();
@@ -77,7 +79,11 @@ export default function OccurrencePostForm() {
       reset();
       toast.success("Ocorrência cadastrada com sucesso!");
     } catch (err: unknown) {
-      toast.error(err.message || "Erro ao cadastrar ocorrência.");
+      if (err instanceof Error) {
+        toast.error(err.message || "Erro ao cadastrar ocorrência.");
+      } else {
+        toast.error("Erro ao cadastrar ocorrência.");
+      }
     }
   };
 

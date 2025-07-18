@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "react-toastify";
 import { TypeRacismContext } from "@/context/typeRacismContext";
 import apiLocal from "../apiLocation";
+import { TypesRacismProps } from "@/types";
 
 const locationSchema = z.object({
   nome: z.string().min(1, "Nome é obrigatório"),
@@ -50,7 +51,11 @@ const onSubmit = async (data: LocationFormData) => {
     toast.success("Localização cadastrada com sucesso!");
     reset();
   } catch (err: unknown) {
-    toast.error(err.message || "Erro ao cadastrar localização.");
+    if (err instanceof Error) {
+      toast.error(err.message || "Erro ao cadastrar localização.");
+    } else {
+      toast.error("Erro ao cadastrar localização.");
+    }
   }
 };
 
@@ -88,7 +93,7 @@ const onSubmit = async (data: LocationFormData) => {
           <label className="block text-sm font-medium text-amber-600 mb-1">Tipo de Racismo</label>
           <select {...register("tipoRacismoId")} className="text-black w-full p-3 border border-zinc-300 rounded-lg" disabled={loading}>
             <option value="">{loading ? "Carregando..." : "Selecione um tipo"}</option>
-            {tipos?.map((tipo: unknown) => (
+            {tipos?.map((tipo: TypesRacismProps) => (
               <option key={tipo.id} value={tipo.id}>{tipo.descricao}</option>
             ))}
           </select>
