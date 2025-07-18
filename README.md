@@ -56,6 +56,7 @@ npm run dev
 ```
 
 A API ficará disponível em: `http://localhost:3333`
+E seu repositório é: `https://github.com/rogersoubr/mapa-do-racismo`
 
 ---
 
