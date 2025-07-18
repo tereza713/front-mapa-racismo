@@ -1,5 +1,5 @@
+// app/components/LocationPostForm.tsx
 "use client";
-
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -7,14 +7,13 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "react-toastify";
 import { TypeRacismContext } from "@/context/typeRacismContext";
 import apiLocal from "../apiLocation";
+import { TypesRacismProps } from "@/types";
 
 const locationSchema = z.object({
   nome: z.string().min(1, "Nome é obrigatório"),
   descricao: z.string().min(1, "Descrição é obrigatória"),
   bairro: z.string().optional(),
   rua: z.string().optional(),
-  latitude: z.string().optional(),
-  longitude: z.string().optional(),
   tipoRacismoId: z.string().min(1, "Tipo de racismo é obrigatório"),
 });
 
@@ -34,8 +33,6 @@ export default function LocationPostForm() {
       descricao: "",
       bairro: "",
       rua: "",
-      latitude: "",
-      longitude: "",
       tipoRacismoId: "",
     },
   });
@@ -44,12 +41,10 @@ const onSubmit = async (data: LocationFormData) => {
   try {
     await apiLocal.criarLocalizacao({
       ...data,
-      latitude: data.latitude ? Number(data.latitude) : undefined,
-      longitude: data.longitude ? Number(data.longitude) : undefined,
     });
     toast.success("Localização cadastrada com sucesso!");
     reset();
-  } catch (err: unknown) {
+  } catch (err: any) {
     toast.error(err.message || "Erro ao cadastrar localização.");
   }
 };
@@ -76,19 +71,12 @@ const onSubmit = async (data: LocationFormData) => {
           <label className="block text-sm font-medium text-amber-600 mb-1">Rua</label>
           <input {...register("rua")} className="text-black w-full p-3 border border-zinc-300 rounded-lg" />
         </div>
-        <div>
-          <label className="block text-sm font-medium text-amber-600 mb-1">Latitude</label>
-          <input {...register("latitude")} className="text-black w-full p-3 border border-zinc-300 rounded-lg" />
-        </div>
-        <div>
-          <label className="block text-sm font-medium text-amber-600 mb-1">Longitude</label>
-          <input {...register("longitude")} className="text-black w-full p-3 border border-zinc-300 rounded-lg" />
-        </div>
+      
         <div>
           <label className="block text-sm font-medium text-amber-600 mb-1">Tipo de Racismo</label>
           <select {...register("tipoRacismoId")} className="text-black w-full p-3 border border-zinc-300 rounded-lg" disabled={loading}>
             <option value="">{loading ? "Carregando..." : "Selecione um tipo"}</option>
-            {tipos?.map((tipo: unknown) => (
+            {tipos?.map((tipo: TypesRacismProps) => (
               <option key={tipo.id} value={tipo.id}>{tipo.descricao}</option>
             ))}
           </select>

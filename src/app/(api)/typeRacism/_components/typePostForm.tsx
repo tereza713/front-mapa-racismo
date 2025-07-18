@@ -42,7 +42,7 @@ export default function TypeRacismForm() {
       await createType(data);
       reset();
       toast.success("Tipo de racismo criado com sucesso!");
-    } catch (err: unknown) {
+    } catch (err: any) {
       toast.error(err.message || "Erro ao criar tipo de racismo.");
       console.error("Erro detalhado:", err);
     }

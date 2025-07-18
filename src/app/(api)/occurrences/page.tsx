@@ -9,7 +9,7 @@ import SectionCol from "@/components/layout/section-Col";
 import OccurrenceList from "./components/OccurrenceList";
 import OccurrencePostForm from "./components/OccurrencePostForm";
 
-export default function TypeRacismPage() {
+export default function OccurencesPage() {
   return (
     <>
     <Header>

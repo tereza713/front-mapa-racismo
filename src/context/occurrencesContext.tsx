@@ -1,7 +1,7 @@
 "use client";
 import { createContext, useState, useEffect } from "react";
 import { OccurrencesProps } from "@/types";
-import api from "@/app/(api)/occurrences/apiOccurrences";
+import apiOccurrences from "@/app/(api)/occurrences/apiOccurrences";
 
 interface OccurrencesContextType { 
   occurrences: OccurrencesProps[];
@@ -31,9 +31,9 @@ export const OccurrencesProvider = ({ children }: { children: React.ReactNode })
   const fetchOccurrences = async () => {
     setLoading(true);
     try {
-      const data = await api.getOccurrences();
+      const data = await apiOccurrences.getOccurrences();
       setOccurrences(data);
-    } catch (err:unknown) {
+    } catch (err:any) {
       setError(err.message || 'Erro ao buscar ocorrências.');
       console.error("Erro ao buscar ocorrências:", err);
     } finally {
@@ -43,8 +43,8 @@ export const OccurrencesProvider = ({ children }: { children: React.ReactNode })
 
   const createOccurrence = async (data: Omit<OccurrencesProps, 'id' | 'data' | 'status'> & { data: string, status: string }) => { // Renomeado e tipo de 'data' adaptado
     try {
-      const response = await api.postOccurrences(data);
-    } catch (err: unknown) {
+      const response = await apiOccurrences.postOccurrences(data);
+    } catch (err: any) {
       setError(err.message || "Erro ao criar ocorrência.");
       console.error("Erro ao criar ocorrência:", err);
       throw err;
@@ -53,11 +53,11 @@ export const OccurrencesProvider = ({ children }: { children: React.ReactNode })
 
   const updateOccurrence = async (id: string, data: OccurrencesProps) => {
     try {
-      const response = await api.updateOccurrences(id, data);
+      const response = await apiOccurrences.updateOccurrences(id, data);
       setOccurrences((prev) =>
         prev.map((occurrence) => (occurrence.id === id ? response : occurrence))
       );
-    } catch (err: unknown) {
+    } catch (err: any) {
       setError(err.message || "Erro ao atualizar ocorrência.");
       console.error("Erro ao atualizar ocorrência:", err);
       throw err;
@@ -66,9 +66,9 @@ export const OccurrencesProvider = ({ children }: { children: React.ReactNode })
 
   const deleteOccurrence = async (id: string) => {
     try {
-      await api.deleteOccurrences(id);
+      await apiOccurrences.deleteOccurrences(id);
       setOccurrences((prev) => prev.filter((occurrence) => occurrence.id!== id));
-    } catch (err: unknown) {
+    } catch (err: any) {
       setError(err.message || "Erro ao deletar ocorrência.");
       console.error("Erro ao deletar ocorrência:", err);
       throw err;
