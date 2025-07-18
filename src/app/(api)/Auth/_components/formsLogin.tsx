@@ -48,7 +48,7 @@ export default function FormularioLogin() {
 
       toast.success("Login realizado com sucesso!");
       reset();
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error("Erro no login:", error);
       toast.error(error.message || "Erro ao fazer login");
     } finally {

@@ -23,7 +23,7 @@ const OccurrenceList = () => {
     );
   }
 
-  const { loading, error } = context;
+  const { loading } = context;
 
   if (loading) {
     return (
