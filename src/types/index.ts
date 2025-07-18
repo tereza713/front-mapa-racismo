@@ -18,9 +18,7 @@ export interface LocationProps { // <--- DEFINIDA AQUI
   descricao: string;
   bairro?: string;
   rua?: string;
-  latitude?: number;
-  longitude?: number;
-  tipoRacismo: TypesRacismProps; // Uau, isso é um objeto complexo!
+  tipoRacismo: TypesRacismProps; 
   _count?: {
     respostas: number;
   };

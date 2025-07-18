@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useContext, useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form"; // Importe SubmitHandler
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { toast } from "react-toastify";
-
+import { LocationContext } from "@/context/locationContext";
 import { OccurrencesContext } from "@/context/occurrencesContext";
 import { TypeRacismContext } from "@/context/typeRacismContext";
 import { LocationProps } from "@/types";
@@ -40,6 +40,7 @@ export default function OccurrencePostForm() {
 
   const occurrencesContext = useContext(OccurrencesContext);
   const typeRacismContext = useContext(TypeRacismContext);
+  const locationContext = useContext(LocationContext); // NOVO: Consumindo LocationContext
 
   if (!occurrencesContext || !typeRacismContext) {
     return (
@@ -72,7 +73,7 @@ export default function OccurrencePostForm() {
     fetchLocations();
   }, []);
 
-  const onSubmit = async (data: OccurrenceFormData) => {
+  const onSubmit: SubmitHandler<OccurrenceFormData> = async (data) => {
     try {
       const occurrenceData = { ...data };
       await createOccurrence(occurrenceData);
